@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
+*~
+
+# Temp
+*.tmp
+
+# 元PNG画像はサイズが大きく公開の必要がないため、Git管理対象外にする
+# （PC上には images/ 以下にそのまま残る。バックアップは
+#   zunaari-music-original-png-backup フォルダにも保管済み）
+images/**/*.png
