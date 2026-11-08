@@ -15,8 +15,12 @@
 
   <!-- ヘッダー / ナビゲーション -->
   <header id="header">
-    <div class="logo">zunaari music</div>
-    <nav>
+    <a href="#hero" class="logo">zunaari music</a>
+    <!-- スマートフォン用メニューボタン（JS有効時のみ表示） -->
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+      <span class="menu-toggle__icon" aria-hidden="true"></span>
+    </button>
+    <nav id="site-nav" aria-label="メインメニュー">
       <ul>
         <li><a href="#concept">Concept / コンセプト</a></li>
         <li><a href="#characters">Characters / キャラクター</a></li>
@@ -106,7 +110,7 @@
         <p class="feature-card__subtitle">English Vocal Trance ・ United Kingdom</p>
         <p>英国の風景を舞台に、希望、団結、立ち上がる力を描いた壮大なEnglish Vocal Trance。</p>
         <p class="en">An epic English vocal trance journey through the landscapes of the United Kingdom, celebrating hope, unity, and the courage to rise.</p>
-        <a href="https://youtu.be/DcXhp2BZLvU?si=KPEHR3VoavOHUa2O" class="button" target="_blank" rel="noopener noreferrer">YouTubeで見る / Watch on YouTube</a>
+        <a href="https://youtu.be/DcXhp2BZLvU" class="button" target="_blank" rel="noopener noreferrer">YouTubeで見る / Watch on YouTube</a>
       </div>
     </article>
   </section>

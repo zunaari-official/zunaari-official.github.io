@@ -207,10 +207,79 @@ h1, h2, h3 {
   color: var(--color-gold);
 }
 
+/* スマートフォン用メニューボタン（PCでは非表示） */
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* 三本線アイコン（中央の線 + 前後の擬似要素） */
+.menu-toggle__icon,
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-toggle__icon {
+  position: relative;
+}
+
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-toggle__icon::before {
+  top: -6px;
+}
+
+.menu-toggle__icon::after {
+  top: 6px;
+}
+
+/* 開いているときは × 印にする */
+.is-nav-open .menu-toggle__icon {
+  background-color: transparent;
+}
+
+.is-nav-open .menu-toggle__icon::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.is-nav-open .menu-toggle__icon::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 /* ---------- 共通セクション設定 ---------- */
 section {
   padding: 6rem 1.5rem;
   border-top: 1px solid var(--border-subtle);
+}
+
+/* メニューから移動したとき、固定ヘッダーの裏に見出しが隠れないようにする */
+section[id] {
+  scroll-margin-top: 5.5rem;
 }
 
 section > h2 {
@@ -330,7 +399,8 @@ section > p.en {
 }
 
 .works-list {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* 画面幅が320pxより狭い端末でも横にはみ出さないよう min() で上限を付ける */
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
 }
 
 .character-card,
@@ -495,8 +565,9 @@ section > p.en {
   max-width: var(--content-width);
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem 1.5rem;
 }
 
 .social-links a {
@@ -528,15 +599,19 @@ section > p.en {
    レスポンシブ（スマートフォン向け）
    ========================================================= */
 @media (max-width: 768px) {
+  /* スマホではヘッダーを文書の流れに置いたまま上部に貼り付ける（sticky） */
   #header {
-    position: relative;
-    top: auto;
+    position: sticky;
+    top: 0;
     left: auto;
     right: auto;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
     gap: 0.75rem;
     padding: 1rem 1.25rem;
+  }
+
+  #header nav {
+    flex-basis: 100%;
   }
 
   #header nav ul {
@@ -544,8 +619,39 @@ section > p.en {
     gap: 0.9rem 1.25rem;
   }
 
+  /* JSが動いたときだけメニューをボタンで開閉する。
+     JS無効時は従来どおりメニューが常に表示される。 */
+  .js-nav-ready .menu-toggle {
+    display: inline-flex;
+  }
+
+  .js-nav-ready #header nav {
+    display: none;
+  }
+
+  .js-nav-ready #header.is-nav-open nav {
+    display: block;
+  }
+
+  .js-nav-ready #header nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 0.25rem;
+  }
+
+  .js-nav-ready #header nav a {
+    display: block;
+    padding: 0.85rem 0.25rem;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
   section {
     padding: 4.5rem 1.25rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 
   #hero {
