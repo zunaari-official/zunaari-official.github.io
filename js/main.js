@@ -52,6 +52,9 @@
   } else if (desktopQuery.addListener) {
     desktopQuery.addListener(onDesktopChange);
   }
+
+  // メニューの準備完了を index.html 側の安全策に知らせる
+  window.zunaariNavReady = true;
 })();
 
 (function () {
