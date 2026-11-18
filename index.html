@@ -19,6 +19,9 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <!-- ヒーロー背景（最初に大きく表示される画像）を最優先で読み込む。CSSの切り替え幅（768px）と同じ条件で1枚だけ読む -->
+  <link rel="preload" as="image" href="images/hero/hero-mobile-v2.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero/hero-main.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -35,6 +38,9 @@
   </script>
 </head>
 <body>
+
+  <!-- キーボード利用者向け：メニューを飛ばして本文へ移動（フォーカス時のみ表示） -->
+  <a class="skip-link" href="#main">本文へスキップ / Skip to content</a>
 
   <!-- ヘッダー / ナビゲーション -->
   <header id="header">
@@ -53,6 +59,8 @@
       </ul>
     </nav>
   </header>
+
+  <main id="main" tabindex="-1">
 
   <!-- ヒーローセクション -->
   <section id="hero">
@@ -80,21 +88,30 @@
     <div class="character-list">
 
       <article class="character-card reveal" id="character-airi">
-        <img class="card-media" src="images/characters/airi.webp" alt="AIRI">
+        <img class="card-media" src="images/characters/airi-600.webp"
+             srcset="images/characters/airi-400.webp 400w, images/characters/airi-600.webp 600w, images/characters/airi.webp 941w"
+             sizes="(max-width: 503px) calc(100vw - 90px), (max-width: 768px) 240px, 300px"
+             width="600" height="1066" loading="lazy" decoding="async" alt="AIRI">
         <h3>AIRI</h3>
         <p>日本語ボーカル中心</p>
         <p class="en">Japanese vocal-centered songs</p>
       </article>
 
       <article class="character-card reveal" id="character-sora">
-        <img class="card-media" src="images/characters/sora.webp" alt="SORA">
+        <img class="card-media" src="images/characters/sora-portrait-600.webp"
+             srcset="images/characters/sora-portrait-400.webp 400w, images/characters/sora-portrait-600.webp 600w, images/characters/sora-portrait-706.webp 706w"
+             sizes="(max-width: 503px) calc(100vw - 90px), (max-width: 768px) 240px, 300px"
+             width="600" height="800" loading="lazy" decoding="async" alt="SORA">
         <h3>SORA</h3>
         <p>英語ボーカル</p>
         <p class="en">English vocal songs</p>
       </article>
 
       <article class="character-card reveal" id="character-dj-nova">
-        <img class="card-media" src="images/characters/dj-nova.webp" alt="DJ Nova">
+        <img class="card-media" src="images/characters/dj-nova-600.webp"
+             srcset="images/characters/dj-nova-400.webp 400w, images/characters/dj-nova-600.webp 600w, images/characters/dj-nova.webp 1086w"
+             sizes="(max-width: 503px) calc(100vw - 90px), (max-width: 768px) 240px, 300px"
+             width="600" height="800" loading="lazy" decoding="async" alt="DJ Nova">
         <h3>DJ Nova</h3>
         <p>インストゥルメンタル／都市・旅をテーマにした作品</p>
         <p class="en">Instrumental works themed around cities and travel</p>
@@ -110,7 +127,10 @@
     <div class="works-list">
 
       <article class="work-card feature-card reveal" id="work-journey-series">
-        <img class="card-media feature-card__media" src="images/works/journey-series.webp" alt="AIRI、SORA、DJ Novaが登場するJourney Seriesの代表ビジュアル">
+        <img class="card-media feature-card__media" src="images/works/journey-series-960.webp"
+             srcset="images/works/journey-series-640.webp 640w, images/works/journey-series-960.webp 960w, images/works/journey-series-1280.webp 1280w, images/works/journey-series.webp 1672w"
+             sizes="(max-width: 768px) calc(100vw - 82px), (max-width: 817px) calc(100vw - 106px), 560px"
+             width="960" height="540" loading="lazy" decoding="async" alt="AIRI、SORA、DJ Novaが登場するJourney Seriesの代表ビジュアル">
         <div class="feature-card__body">
           <h3>Journey Series</h3>
           <p class="feature-card__subtitle">Road to World Cup 2026</p>
@@ -127,7 +147,10 @@
     <h2 class="reveal">Latest / 最新動画</h2>
 
     <article class="feature-card reveal" id="latest-sora-lionheart-rising">
-      <img class="card-media feature-card__media" src="images/works/sora-lionheart-rising.webp" alt="SORA – Lionheart Rising サムネイル">
+      <img class="card-media feature-card__media" src="images/works/sora-lionheart-rising-960.webp"
+           srcset="images/works/sora-lionheart-rising-640.webp 640w, images/works/sora-lionheart-rising-960.webp 960w, images/works/sora-lionheart-rising-1280.webp 1280w, images/works/sora-lionheart-rising.webp 1672w"
+           sizes="(max-width: 768px) calc(100vw - 82px), (max-width: 817px) calc(100vw - 106px), 560px"
+           width="960" height="540" loading="lazy" decoding="async" alt="SORA – Lionheart Rising サムネイル">
       <div class="feature-card__body">
         <h3>SORA – Lionheart Rising</h3>
         <p class="feature-card__subtitle">English Vocal Trance ・ United Kingdom</p>
@@ -147,6 +170,8 @@
       <a href="https://x.com/zunaarimusic" target="_blank" rel="noopener noreferrer" aria-label="zunaari musicのXを開く" class="reveal">X (Twitter)</a>
     </div>
   </section>
+
+  </main>
 
   <!-- フッター -->
   <footer id="footer">

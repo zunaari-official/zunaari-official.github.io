@@ -39,8 +39,37 @@
   --content-width: 1100px;
 }
 
-html {
-  scroll-behavior: smooth;
+/* スムーズスクロールは「動きを減らす」設定がない場合だけ有効にする */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* キーボード利用者向けの「本文へスキップ」リンク（フォーカス時だけ表示） */
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 200;
+  padding: 0.6rem 1.2rem;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--color-gold);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* スキップリンクで移動したときの main 自体の枠線は出さない */
+#main:focus {
+  outline: none;
 }
 
 body {
@@ -93,6 +122,7 @@ h1, h2, h3 {
   position: relative;
   overflow: hidden;
   object-fit: cover; /* 後で <img> に差し替えたときに画像がきれいに収まる */
+  height: auto; /* <img> の width/height 属性は縦横比の予約にだけ使い、高さは aspect-ratio で決める */
 }
 
 .card-media::after {
@@ -493,6 +523,8 @@ section > p.en {
   flex: 1 1 380px;
   aspect-ratio: 16 / 9;
   margin: 0;
+  /* 横並び時に本文の高さへ引き伸ばされて16:9が崩れ、画像の端が切れるのを防ぐ */
+  align-self: center;
 }
 
 .feature-card__body {
