@@ -217,11 +217,31 @@ h1, h2, h3 {
   font-size: 1.3rem;
   letter-spacing: 0.12em;
   color: var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 1.5rem;
 }
 
 #header nav ul {
   display: flex;
   gap: 1.75rem;
+}
+
+/* PC幅のうち狭い範囲（1024〜1199px）はメニュー6項目が1行に収まるよう間隔を詰める
+   （1023px以下はボタンで開閉するメニューに切り替える。下の「メニューの切り替え」参照） */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  #header {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  #header nav ul {
+    gap: 1rem;
+  }
+
+  #header nav a {
+    letter-spacing: 0.02em;
+  }
 }
 
 #header nav a {
@@ -527,6 +547,14 @@ section > p.en {
   align-self: center;
 }
 
+/* 作品一覧の中のフィーチャーカードは、常に列の幅いっぱいに広げる。
+   （margin: 0 auto のままだと幅が中身に合わせて決まり、画像の読み込み前はカードが
+   狭くなって画像と本文が縦に並ぶ→読み込み後に横並びへ縮む。その途中にメニューで
+   移動すると、移動先の見出しが画面上に隠れる原因になっていた） */
+.works-list > .feature-card {
+  width: 100%;
+}
+
 .feature-card__body {
   flex: 1 1 300px;
   display: flex;
@@ -734,18 +762,14 @@ section > p.release-more {
 }
 
 /* =========================================================
-   レスポンシブ（スマートフォン向け）
+   メニューの切り替え（1023px以下はボタンで開閉）
+   メニュー6項目とロゴが1行に収まらない幅では、スマホと同じ開閉式メニューにする。
+   ページのレイアウト（ヒーロー等）の切り替えは768pxのまま。
    ========================================================= */
-@media (max-width: 768px) {
-  /* スマホではヘッダーを文書の流れに置いたまま上部に貼り付ける（sticky） */
+@media (max-width: 1023px) {
   #header {
-    position: sticky;
-    top: 0;
-    left: auto;
-    right: auto;
     flex-wrap: wrap;
     gap: 0.75rem;
-    padding: 1rem 1.25rem;
   }
 
   #header nav {
@@ -782,6 +806,20 @@ section > p.release-more {
     padding: 0.85rem 0.25rem;
     font-size: 0.95rem;
     border-top: 1px solid var(--border-subtle);
+  }
+}
+
+/* =========================================================
+   レスポンシブ（スマートフォン向け）
+   ========================================================= */
+@media (max-width: 768px) {
+  /* スマホではヘッダーを文書の流れに置いたまま上部に貼り付ける（sticky） */
+  #header {
+    position: sticky;
+    top: 0;
+    left: auto;
+    right: auto;
+    padding: 1rem 1.25rem;
   }
 
   section {

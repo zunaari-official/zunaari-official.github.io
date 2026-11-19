@@ -40,8 +40,8 @@
     }
   });
 
-  // PC幅に戻ったら開いた状態をリセットする
-  var desktopQuery = window.matchMedia('(min-width: 769px)');
+  // PC幅（メニューを常時表示する1024px以上）に戻ったら開いた状態をリセットする
+  var desktopQuery = window.matchMedia('(min-width: 1024px)');
   var onDesktopChange = function (query) {
     if (query.matches) {
       setOpen(false);
