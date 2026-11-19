@@ -566,6 +566,112 @@ section > p.en {
   margin-top: 0.75rem;
 }
 
+/* ---------- キャラクターの肩書き ---------- */
+.character-card p.character-role {
+  color: var(--color-gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 配信作品（ジャケット中心：スマホ2列・PC3列） ---------- */
+.release-list {
+  list-style: none;
+  max-width: 960px;
+  margin: 2.5rem auto 0;
+  padding: 0;
+  display: grid;
+  gap: 2rem 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .release-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem 2rem;
+  }
+}
+
+.release-card {
+  min-width: 0;
+}
+
+/* ジャケットの上には文字やバッジを重ねない（公式アートワークの文字を隠さないため） */
+.release-cover {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  margin-bottom: 0.85rem;
+}
+
+.release-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+.release-cover:focus-visible,
+.release-card summary:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .release-cover img {
+    transition: transform 0.4s ease;
+  }
+
+  .release-cover:hover img {
+    transform: scale(1.03);
+  }
+}
+
+.release-meta {
+  color: var(--color-gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.3rem;
+}
+
+.release-card h3 {
+  font-size: clamp(0.95rem, 2.4vw, 1.1rem);
+  line-height: 1.35;
+  margin: 0 0 0.2rem;
+  overflow-wrap: anywhere;
+}
+
+.release-artist {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin: 0 0 0.4rem;
+}
+
+.release-card details {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+.release-card summary {
+  cursor: pointer;
+  padding: 0.35rem 0;
+}
+
+.release-card details ol {
+  margin: 0.4rem 0 0;
+  padding-left: 1.3rem;
+}
+
+.release-card details li {
+  margin: 0.15rem 0;
+}
+
+section > p.release-more {
+  margin-top: 2.5rem;
+}
+
 /* ---------- 最新動画 ---------- */
 #latest {
   background: var(--bg-secondary);

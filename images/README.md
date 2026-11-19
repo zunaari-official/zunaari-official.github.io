@@ -34,6 +34,19 @@
 | `journey-series.webp`／`-1280`／`-960`／`-640` | Journey Series のサムネイル | 1672／1280／960／640px幅 |
 | `sora-lionheart-rising.webp`／`-1280`／`-960`／`-640` | 「SORA – Lionheart Rising」のサムネイル | 1672／1280／960／640px幅 |
 
+## releases/（配信作品のジャケット。表示枠は正方形1:1）
+
+音楽配信サービスで公開している公式ジャケットの縮小版。ジャケットの上に文字やバッジを重ねない。
+
+| ファイル名 | 作品 | サイズ |
+|---|---|---|
+| `between-signal-and-light-480.webp`／`-320` | Between Signal and Light（Single） | 480px／320px |
+| `first-light-480.webp`／`-320` | First Light（EP） | 480px／320px |
+| `ignition-night-drive-chapter-480.webp`／`-320` | IGNITION – Night Drive Chapter（Album） | 480px／320px |
+| `beyond-the-dawn-480.webp`／`-320` | Beyond the Dawn – The First Light（EP） | 480px／320px |
+| `into-the-dawn-480.webp`／`-320` | Into the Dawn（Single） | 480px／320px |
+| `hold-on-tight-480.webp`／`-320` | Hold on Tight（Single） | 480px／320px |
+
 ## その他
 
 | ファイル名 | 用途 |
