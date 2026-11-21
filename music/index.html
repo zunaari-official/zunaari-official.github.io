@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- このページは _build/build.mjs が _src/data/catalog.json から生成しています。直接編集しないでください。 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Library | zunaari music</title>
+  <meta name="description" content="Music Library of zunaari music. Find works by title, artist and release. / zunaari music の楽曲一覧。">
+  <link rel="canonical" href="https://zunaari-official.github.io/music/">
+
+  <!-- OGP（SNSでURLを共有したときのカード表示） -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="zunaari music">
+  <meta property="og:url" content="https://zunaari-official.github.io/music/">
+  <meta property="og:title" content="Music Library | zunaari music">
+  <meta property="og:description" content="Music Library of zunaari music. Find works by title, artist and release. / zunaari music の楽曲一覧。">
+  <meta property="og:image" content="https://zunaari-official.github.io/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AIRI、SORA、DJ Novaと「zunaari music」のロゴが描かれた公式サイトのビジュアル">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <script>
+    document.documentElement.classList.add('js-nav-ready', 'js');
+    window.addEventListener('load', function () {
+      if (!window.zunaariNavReady) {
+        document.documentElement.classList.remove('js-nav-ready');
+      }
+    });
+  </script>
+</head>
+<body class="subpage">
+
+  <a class="skip-link" href="#main">本文へスキップ / Skip to content</a>
+
+  <header id="header">
+    <a href="/" class="logo">zunaari music</a>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+      <span class="menu-toggle__icon" aria-hidden="true"></span>
+    </button>
+    <nav id="site-nav" aria-label="メインメニュー">
+      <ul>
+        <li><a href="/#concept">Concept / コンセプト</a></li>
+        <li><a href="/#characters">Characters / キャラクター</a></li>
+        <li><a href="/#works">Works / 作品</a></li>
+        <li><a href="/#latest">Latest / 最新動画</a></li>
+        <li><a href="/#releases">Releases / 配信作品</a></li>
+        <li><a href="/music/" aria-current="page">Music / 楽曲</a></li>
+        <li><a href="/#social">Social / SNS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><span aria-current="page">Music</span></li>
+    </ol>
+  </nav>
+
+  <section class="page-section" aria-labelledby="page-title">
+    <h1 id="page-title">Music Library / 楽曲</h1>
+    <p>公開中の楽曲の一覧です。曲名・名義・収録作品で検索できます。</p>
+    <p class="en">All published works. Search by title, artist or release.</p>
+
+    <form class="library-filter" role="search" aria-label="楽曲を探す">
+      <div class="library-filter__field library-filter__field--search">
+        <label for="filter-q">検索 / Search</label>
+        <div class="library-filter__search">
+          <input id="filter-q" name="q" type="search" autocomplete="off" placeholder="曲名・名義・収録作品 / Title, artist or release">
+          <button type="submit" class="library-filter__submit">検索 / Search</button>
+        </div>
+      </div>
+        <div class="library-filter__field">
+          <label for="filter-artist">名義 / Artist</label>
+          <select id="filter-artist" name="artist">
+            <option value="">すべて / All</option>
+            <option value="zunaari">zunaari</option>
+            <option value="airi">AIRI</option>
+            <option value="sora">SORA</option>
+            <option value="dj-nova">DJ Nova</option>
+          </select>
+        </div>
+        <div class="library-filter__field">
+          <label for="filter-format">形態 / Format</label>
+          <select id="filter-format" name="format">
+            <option value="">すべて / All</option>
+            <option value="streaming">配信 / Streaming</option>
+            <option value="youtube">YouTube</option>
+          </select>
+        </div>
+        <div class="library-filter__field">
+          <label for="filter-year">年 / Year</label>
+          <select id="filter-year" name="year">
+            <option value="">すべて / All</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+          </select>
+        </div>
+      <div class="library-filter__status">
+        <p class="library-filter__count" aria-live="polite"><span data-count>21</span> 件 / items</p>
+        <button type="reset" class="library-filter__clear">条件をクリア / Clear</button>
+      </div>
+    </form>
+
+    <ul class="library-list">
+      <li class="library-item" data-search="neon run neon run sora sora – neon run" data-artist="sora" data-format="youtube" data-year="2026" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/neon-run/">Neon Run</a>
+        <span class="library-item__artist">SORA</span>
+        <span class="library-item__meta">YouTube（MV）</span>
+      </li>
+      <li class="library-item" data-search="home home airi airi – home" data-artist="airi" data-format="youtube" data-year="2026" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/home/">Home</a>
+        <span class="library-item__artist">AIRI</span>
+        <span class="library-item__meta">YouTube（MV）</span>
+      </li>
+      <li class="library-item" data-search="between signal and light between signal and light (airi chapter) between signal and light (sora chapter) airi chapter sora chapter zunaari between signal and light" data-artist="zunaari" data-format="streaming" data-year="2026" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/between-signal-and-light/">Between Signal and Light</a>
+        <span class="library-item__artist">zunaari</span>
+        <span class="library-item__meta">Between Signal and Light ・ 音源 2</span>
+      </li>
+      <li class="library-item" data-search="after first light after first light zunaari, dj nova first light" data-artist="zunaari dj-nova" data-format="streaming" data-year="2026" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/after-first-light/">After First Light</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">First Light</span>
+      </li>
+      <li class="library-item" data-search="ascension at dawn ascension at dawn zunaari, dj nova first light" data-artist="zunaari dj-nova" data-format="streaming" data-year="2026" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/ascension-at-dawn/">Ascension at Dawn</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">First Light</span>
+      </li>
+      <li class="library-item" data-search="before dawn before dawn zunaari, dj nova first light" data-artist="zunaari dj-nova" data-format="streaming" data-year="2026" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/before-dawn/">Before Dawn</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">First Light</span>
+      </li>
+      <li class="library-item" data-search="beyond the first light beyond the first light zunaari, dj nova first light" data-artist="zunaari dj-nova" data-format="streaming" data-year="2026" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/beyond-the-first-light/">Beyond the First Light</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">First Light</span>
+      </li>
+      <li class="library-item" data-search="echoes of first light echoes of first light zunaari, dj nova first light" data-artist="zunaari dj-nova" data-format="streaming" data-year="2026" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/echoes-of-first-light/">Echoes of First Light</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">First Light</span>
+      </li>
+      <li class="library-item" data-search="after midnight ignition after midnight ignition zunaari, dj nova ignition – night drive chapter" data-artist="zunaari dj-nova" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/after-midnight-ignition/">After Midnight Ignition</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">IGNITION – Night Drive Chapter</span>
+      </li>
+      <li class="library-item" data-search="eternal horizon – night drive outro eternal horizon – night drive outro zunaari, dj nova ignition – night drive chapter" data-artist="zunaari dj-nova" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/eternal-horizon-night-drive-outro/">Eternal Horizon – Night Drive Outro</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">IGNITION – Night Drive Chapter</span>
+      </li>
+      <li class="library-item" data-search="final ignition final ignition zunaari, dj nova ignition – night drive chapter" data-artist="zunaari dj-nova" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/final-ignition/">Final Ignition</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">IGNITION – Night Drive Chapter</span>
+      </li>
+      <li class="library-item" data-search="midnight ignition midnight ignition zunaari, dj nova ignition – night drive chapter" data-artist="zunaari dj-nova" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/midnight-ignition/">Midnight Ignition</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">IGNITION – Night Drive Chapter</span>
+      </li>
+      <li class="library-item" data-search="nightfall ignition nightfall ignition zunaari, dj nova ignition – night drive chapter" data-artist="zunaari dj-nova" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/nightfall-ignition/">Nightfall Ignition</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">IGNITION – Night Drive Chapter</span>
+      </li>
+      <li class="library-item" data-search="nova rush – extended festival mix nova rush – extended festival mix zunaari, dj nova ignition – night drive chapter" data-artist="zunaari dj-nova" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/nova-rush-extended-festival-mix/">Nova Rush – Extended Festival Mix</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">IGNITION – Night Drive Chapter</span>
+      </li>
+      <li class="library-item" data-search="wings of dawn wings of dawn zunaari, dj nova ignition – night drive chapter" data-artist="zunaari dj-nova" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/wings-of-dawn/">Wings of Dawn</a>
+        <span class="library-item__artist">zunaari, DJ Nova</span>
+        <span class="library-item__meta">IGNITION – Night Drive Chapter</span>
+      </li>
+      <li class="library-item" data-search="above the dawn above the dawn zunaari beyond the dawn – the first light" data-artist="zunaari" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/above-the-dawn/">Above the Dawn</a>
+        <span class="library-item__artist">zunaari</span>
+        <span class="library-item__meta">Beyond the Dawn – The First Light</span>
+      </li>
+      <li class="library-item" data-search="chase the dawn chase the dawn zunaari beyond the dawn – the first light" data-artist="zunaari" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/chase-the-dawn/">Chase the Dawn</a>
+        <span class="library-item__artist">zunaari</span>
+        <span class="library-item__meta">Beyond the Dawn – The First Light</span>
+      </li>
+      <li class="library-item" data-search="keep rising keep rising zunaari beyond the dawn – the first light" data-artist="zunaari" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/keep-rising/">Keep Rising</a>
+        <span class="library-item__artist">zunaari</span>
+        <span class="library-item__meta">Beyond the Dawn – The First Light</span>
+      </li>
+      <li class="library-item" data-search="tears of light tears of light zunaari beyond the dawn – the first light" data-artist="zunaari" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/tears-of-light/">Tears of Light</a>
+        <span class="library-item__artist">zunaari</span>
+        <span class="library-item__meta">Beyond the Dawn – The First Light</span>
+      </li>
+      <li class="library-item" data-search="hold on tight hold on tight zunaari hold on tight" data-artist="zunaari" data-format="streaming" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/hold-on-tight/">Hold on Tight</a>
+        <span class="library-item__artist">zunaari</span>
+        <span class="library-item__meta">Hold on Tight</span>
+      </li>
+      <li class="library-item" data-search="into the dawn into the dawn zunaari into the dawn beyond the dawn – the first light into the dawn" data-artist="zunaari" data-format="streaming youtube" data-year="2025" data-genre="" data-series="" data-lang="">
+        <a class="library-item__title" href="/music/into-the-dawn/">Into the Dawn</a>
+        <span class="library-item__artist">zunaari</span>
+        <span class="library-item__meta">Into the Dawn / Beyond the Dawn – The First Light ・ YouTube</span>
+      </li>
+    </ul>
+    <p class="library-empty" hidden>条件に合う楽曲はありません。条件を変えるか、クリアしてください。<br><span class="en">No works match. Change or clear the filters.</span></p>
+
+    <p class="page-links"><a href="/releases/">配信作品の一覧へ / All releases →</a></p>
+  </section>
+
+  </main>
+
+  <footer id="footer">
+    <p>&copy; 2026 zunaari music. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  <script src="/js/library.js" defer></script>
+</body>
+</html>

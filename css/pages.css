@@ -1,0 +1,540 @@
+/* =========================================================
+   zunaari music - pages.css
+   Music Library・楽曲・配信作品などの子ページ専用のスタイル。
+   Home（index.html）では読み込まない。色・文字・部品は style.css の変数と部品を使う。
+   ========================================================= */
+
+/* 支援技術にだけ読ませる文字 */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* PC幅ではヘッダーが固定表示なので、本文がヘッダーの裏に隠れないよう余白を取る
+   （768px以下はヘッダーが文書の流れに沿って貼り付くため不要） */
+.subpage main {
+  padding-top: 5.25rem;
+}
+
+/* 今いるページのメニュー項目（Music の一覧・楽曲ページ） */
+#header nav a[aria-current] {
+  color: var(--color-gold);
+}
+
+/* ---------- パンくずリスト ---------- */
+.breadcrumb {
+  max-width: calc(960px + 3rem); /* 本文（最大960px）の左端にそろえる */
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 0;
+  font-size: 0.8rem;
+  color: var(--text-en);
+}
+
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+}
+
+.breadcrumb li + li::before {
+  content: "›";
+  margin-right: 0.5rem;
+  color: var(--text-en);
+}
+
+.breadcrumb a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+  color: var(--color-gold);
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--text-primary);
+}
+
+/* ---------- 一覧ページの見出し（Home の section > h2 と同じ見た目） ---------- */
+.page-section {
+  border-top: none;
+  padding-top: 3rem;
+}
+
+.page-section > h1 {
+  max-width: var(--content-width);
+  margin: 0 auto 2.5rem;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  text-align: center;
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+
+.page-section > h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-blue), var(--color-gold));
+}
+
+.page-links {
+  margin-top: 3rem !important;
+}
+
+.page-links a,
+.detail__back a,
+.release-card h3 a,
+.release-card h2 a,
+.tracklist__title a,
+.appearances a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(205, 166, 106, 0.5);
+  text-underline-offset: 3px;
+}
+
+.page-links a:hover,
+.page-links a:focus-visible,
+.detail__back a:hover,
+.detail__back a:focus-visible,
+.release-card h3 a:hover,
+.release-card h3 a:focus-visible,
+.release-card h2 a:hover,
+.release-card h2 a:focus-visible,
+.tracklist__title a:hover,
+.tracklist__title a:focus-visible,
+.appearances a:hover,
+.appearances a:focus-visible {
+  color: var(--color-gold);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* 配信作品一覧（/releases/）のカード見出しは h2（見出しの階層を飛ばさないため）。見た目は Home の h3 と同じ */
+.release-card h2 {
+  font-size: clamp(0.95rem, 2.4vw, 1.1rem);
+  line-height: 1.35;
+  margin: 0 0 0.2rem;
+  overflow-wrap: anywhere;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- 楽曲・配信作品の詳細 ---------- */
+.detail {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+}
+
+.detail__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.detail__cover {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* 配信のない楽曲（YouTubeのみ）は動画の横長の画像 */
+.detail__cover--wide {
+  aspect-ratio: 16 / 9;
+}
+
+/* 公開用の画像がない楽曲は文字だけ */
+.detail__hero--text {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.detail__kicker {
+  color: var(--color-gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.detail h1 {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.detail__artist {
+  color: var(--text-secondary);
+  margin-top: 0.4rem;
+}
+
+.detail__facts {
+  color: var(--text-en);
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+.listen-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.listen-links .button {
+  margin-top: 0;
+}
+
+.detail__section {
+  padding: 3.5rem 0 0;
+  border-top: none;
+}
+
+.detail__section > h2 {
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.75rem;
+  text-align: left;
+  font-size: 1.35rem;
+}
+
+.detail__section > h2::after {
+  left: 0;
+  transform: none;
+}
+
+.detail__back {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* 収録曲 */
+.tracklist {
+  list-style: none;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tracklist li {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.85rem 0.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tracklist__no,
+.tracklist__time {
+  color: var(--text-en);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tracklist__title {
+  overflow-wrap: anywhere;
+}
+
+/* 音源と収録 */
+.recording-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.recording {
+  padding: 1.5rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+
+.recording h3 {
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.recording__version {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--color-gold);
+  border: 1px solid rgba(205, 166, 106, 0.5);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.recording__meta {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+.recording__label {
+  color: var(--text-en);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  margin-top: 1rem;
+}
+
+.appearances li {
+  padding: 0.35rem 0;
+  overflow-wrap: anywhere;
+}
+
+/* 「種別・日付・曲番号」と「Spotify」は、まとまりごとに折り返す */
+.appearances__meta {
+  display: inline-block;
+  color: var(--text-en);
+  font-size: 0.82rem;
+  margin-left: 0.25rem;
+}
+
+.appearances__listen {
+  display: inline-block;
+  font-size: 0.82rem;
+  margin-left: 0.5rem;
+}
+
+/* ---------- Music Library 一覧 ---------- */
+.library-filter {
+  max-width: 960px;
+  margin: 2rem auto 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+  align-items: flex-end;
+}
+
+/* 検索・絞り込みはJSが動くときだけ使えるので、JSが無いときは出さない。
+   <head> の中で html に js を付けてから描画するので、JSがあるときは最初から場所を取り、
+   読み込み後に一覧が押し下げられない（レイアウトのずれ＝CLSを防ぐ） */
+.library-filter {
+  display: none;
+}
+
+.js .library-filter {
+  display: flex;
+}
+
+.library-filter__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 10rem;
+}
+
+.library-filter__field--search {
+  flex: 1 1 16rem;
+}
+
+.library-filter label {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.library-filter input,
+.library-filter select {
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  min-height: 44px;
+}
+
+.library-filter input:focus-visible,
+.library-filter select:focus-visible,
+.library-filter__clear:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.library-filter__status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.library-filter__count {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.library-filter__search {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.library-filter__search input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.library-filter__submit {
+  font: inherit;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  min-height: 44px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.library-filter__submit:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.library-filter__clear {
+  font: inherit;
+  font-size: 0.82rem;
+  color: var(--color-gold);
+  background: none;
+  border: 1px solid var(--color-gold);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.library-list {
+  max-width: 960px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.library-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 0.25rem 1.25rem;
+  align-items: baseline;
+  padding: 1rem 0.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.library-item[hidden] {
+  display: none;
+}
+
+.library-item__title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+}
+
+.library-item__title:hover,
+.library-item__title:focus-visible {
+  color: var(--color-gold);
+}
+
+.library-item__artist {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.library-item__meta {
+  color: var(--text-en);
+  font-size: 0.82rem;
+}
+
+section > p.library-empty {
+  margin-top: 2rem;
+  color: var(--text-secondary);
+}
+
+.library-empty .en {
+  font-size: 0.92rem;
+  color: var(--text-en);
+  font-style: italic;
+}
+
+.library-empty[hidden] {
+  display: none;
+}
+
+/* ---------- 404 ---------- */
+.not-found {
+  text-align: center;
+}
+
+.not-found__links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.not-found__links .button {
+  margin-top: 0;
+}
+
+/* ---------- スマートフォン ---------- */
+@media (max-width: 768px) {
+  .subpage main {
+    padding-top: 0;
+  }
+
+  .breadcrumb {
+    padding: 1rem 1.25rem 0;
+  }
+
+  .page-section {
+    padding-top: 2rem;
+  }
+
+  .detail {
+    padding: 1.75rem 1.25rem 4rem;
+  }
+
+  .detail__hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .detail__cover {
+    max-width: 360px;
+  }
+
+  .library-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .library-filter__field {
+    flex: 1 1 100%;
+  }
+
+  .library-filter__status {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+}

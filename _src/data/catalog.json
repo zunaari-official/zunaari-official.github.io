@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 1,
+  "site": {
+    "name": "zunaari music",
+    "baseUrl": "https://zunaari-official.github.io",
+    "defaultOgImage": {
+      "path": "images/ogp.jpg",
+      "width": 1200,
+      "height": 630,
+      "alt": "AIRI、SORA、DJ Novaと「zunaari music」のロゴが描かれた公式サイトのビジュアル"
+    }
+  },
+  "artists": [
+    {
+      "slug": "zunaari",
+      "name": "zunaari",
+      "kind": "project",
+      "canVocal": null
+    },
+    {
+      "slug": "airi",
+      "name": "AIRI",
+      "kind": "character",
+      "canVocal": true
+    },
+    {
+      "slug": "sora",
+      "name": "SORA",
+      "kind": "character",
+      "canVocal": true
+    },
+    {
+      "slug": "dj-nova",
+      "name": "DJ Nova",
+      "kind": "character",
+      "canVocal": false
+    }
+  ],
+  "works": [
+    {
+      "slug": "hold-on-tight",
+      "title": "Hold on Tight"
+    },
+    {
+      "slug": "into-the-dawn",
+      "title": "Into the Dawn"
+    },
+    {
+      "slug": "keep-rising",
+      "title": "Keep Rising"
+    },
+    {
+      "slug": "chase-the-dawn",
+      "title": "Chase the Dawn"
+    },
+    {
+      "slug": "above-the-dawn",
+      "title": "Above the Dawn"
+    },
+    {
+      "slug": "tears-of-light",
+      "title": "Tears of Light"
+    },
+    {
+      "slug": "nova-rush-extended-festival-mix",
+      "title": "Nova Rush – Extended Festival Mix"
+    },
+    {
+      "slug": "nightfall-ignition",
+      "title": "Nightfall Ignition"
+    },
+    {
+      "slug": "midnight-ignition",
+      "title": "Midnight Ignition"
+    },
+    {
+      "slug": "after-midnight-ignition",
+      "title": "After Midnight Ignition"
+    },
+    {
+      "slug": "final-ignition",
+      "title": "Final Ignition"
+    },
+    {
+      "slug": "wings-of-dawn",
+      "title": "Wings of Dawn"
+    },
+    {
+      "slug": "eternal-horizon-night-drive-outro",
+      "title": "Eternal Horizon – Night Drive Outro"
+    },
+    {
+      "slug": "before-dawn",
+      "title": "Before Dawn"
+    },
+    {
+      "slug": "echoes-of-first-light",
+      "title": "Echoes of First Light"
+    },
+    {
+      "slug": "beyond-the-first-light",
+      "title": "Beyond the First Light"
+    },
+    {
+      "slug": "ascension-at-dawn",
+      "title": "Ascension at Dawn"
+    },
+    {
+      "slug": "after-first-light",
+      "title": "After First Light"
+    },
+    {
+      "slug": "between-signal-and-light",
+      "title": "Between Signal and Light"
+    },
+    {
+      "slug": "neon-run",
+      "title": "Neon Run"
+    },
+    {
+      "slug": "home",
+      "title": "Home"
+    }
+  ],
+  "recordings": [
+    {
+      "slug": "hold-on-tight",
+      "work": "hold-on-tight",
+      "versionLabel": null,
+      "displayArtist": "zunaari",
+      "durationMs": 214879,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "into-the-dawn",
+      "work": "into-the-dawn",
+      "versionLabel": null,
+      "displayArtist": "zunaari",
+      "durationMs": 183399,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "keep-rising",
+      "work": "keep-rising",
+      "versionLabel": null,
+      "displayArtist": "zunaari",
+      "durationMs": 198399,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "chase-the-dawn",
+      "work": "chase-the-dawn",
+      "versionLabel": null,
+      "displayArtist": "zunaari",
+      "durationMs": 184999,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "above-the-dawn",
+      "work": "above-the-dawn",
+      "versionLabel": null,
+      "displayArtist": "zunaari",
+      "durationMs": 196599,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "tears-of-light",
+      "work": "tears-of-light",
+      "versionLabel": null,
+      "displayArtist": "zunaari",
+      "durationMs": 213039,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "nova-rush-extended-festival-mix",
+      "work": "nova-rush-extended-festival-mix",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 302960,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "nightfall-ignition",
+      "work": "nightfall-ignition",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 101279,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "midnight-ignition",
+      "work": "midnight-ignition",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 221159,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "after-midnight-ignition",
+      "work": "after-midnight-ignition",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 205559,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "final-ignition",
+      "work": "final-ignition",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 182159,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "wings-of-dawn",
+      "work": "wings-of-dawn",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 214959,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "eternal-horizon-night-drive-outro",
+      "work": "eternal-horizon-night-drive-outro",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 144839,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "before-dawn",
+      "work": "before-dawn",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 227880,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "echoes-of-first-light",
+      "work": "echoes-of-first-light",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 459880,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "beyond-the-first-light",
+      "work": "beyond-the-first-light",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 378600,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "ascension-at-dawn",
+      "work": "ascension-at-dawn",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 211960,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "after-first-light",
+      "work": "after-first-light",
+      "versionLabel": null,
+      "displayArtist": "zunaari, DJ Nova",
+      "durationMs": 299800,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "between-signal-and-light-airi-chapter",
+      "work": "between-signal-and-light",
+      "title": "Between Signal and Light (AIRI Chapter)",
+      "versionLabel": "AIRI Chapter",
+      "displayArtist": "zunaari",
+      "durationMs": 271160,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "between-signal-and-light-sora-chapter",
+      "work": "between-signal-and-light",
+      "title": "Between Signal and Light (SORA Chapter)",
+      "versionLabel": "SORA Chapter",
+      "displayArtist": "zunaari",
+      "durationMs": 305160,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "neon-run",
+      "work": "neon-run",
+      "versionLabel": null,
+      "displayArtist": "SORA",
+      "durationMs": null,
+      "lyricsType": null,
+      "credits": []
+    },
+    {
+      "slug": "home",
+      "work": "home",
+      "versionLabel": null,
+      "displayArtist": "AIRI",
+      "durationMs": null,
+      "lyricsType": null,
+      "credits": []
+    }
+  ],
+  "releases": [
+    {
+      "slug": "between-signal-and-light",
+      "title": "Between Signal and Light",
+      "type": "single",
+      "releaseDate": "2026-07-19",
+      "displayArtist": "zunaari",
+      "cover": {
+        "base": "images/releases/between-signal-and-light",
+        "widths": [
+          320,
+          480
+        ]
+      },
+      "links": {
+        "spotify": "https://open.spotify.com/album/3Z0Bv1e4uyNNfwI3xXBScq"
+      },
+      "tracks": [
+        {
+          "disc": 1,
+          "no": 1,
+          "recording": "between-signal-and-light-airi-chapter",
+          "links": {
+            "spotify": "https://open.spotify.com/track/4yL4hRYbKoEBUSClDY5iaG"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 2,
+          "recording": "between-signal-and-light-sora-chapter",
+          "links": {
+            "spotify": "https://open.spotify.com/track/5TEZcFLmQbXozqF9cJwRFb"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "first-light",
+      "title": "First Light",
+      "type": "ep",
+      "releaseDate": "2026-06-21",
+      "displayArtist": "zunaari, DJ Nova",
+      "cover": {
+        "base": "images/releases/first-light",
+        "widths": [
+          320,
+          480
+        ]
+      },
+      "links": {
+        "spotify": "https://open.spotify.com/album/09qZrjuv9IhnL8lnAuDg0P"
+      },
+      "tracks": [
+        {
+          "disc": 1,
+          "no": 1,
+          "recording": "before-dawn",
+          "links": {
+            "spotify": "https://open.spotify.com/track/5WU5t2JuZpBrW8iIRXBUIJ"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 2,
+          "recording": "echoes-of-first-light",
+          "links": {
+            "spotify": "https://open.spotify.com/track/2EgsjiAGJQwPN9abYwC6Sa"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 3,
+          "recording": "beyond-the-first-light",
+          "links": {
+            "spotify": "https://open.spotify.com/track/3eXw4avnVB4dnhPV05JSSu"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 4,
+          "recording": "ascension-at-dawn",
+          "links": {
+            "spotify": "https://open.spotify.com/track/7d6vmpaOGsZbXIrwk1u25o"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 5,
+          "recording": "after-first-light",
+          "links": {
+            "spotify": "https://open.spotify.com/track/2iHul3pnXLWiFWmbsk3GEU"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "ignition-night-drive-chapter",
+      "title": "IGNITION – Night Drive Chapter",
+      "type": "album",
+      "releaseDate": "2025-12-09",
+      "displayArtist": "zunaari, DJ Nova",
+      "cover": {
+        "base": "images/releases/ignition-night-drive-chapter",
+        "widths": [
+          320,
+          480
+        ]
+      },
+      "links": {
+        "spotify": "https://open.spotify.com/album/6Xmg5Jo2pbBVLHwlP3kTi3"
+      },
+      "tracks": [
+        {
+          "disc": 1,
+          "no": 1,
+          "recording": "nova-rush-extended-festival-mix",
+          "links": {
+            "spotify": "https://open.spotify.com/track/3eh5FMYBcvucFz8IPrREtS"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 2,
+          "recording": "nightfall-ignition",
+          "links": {
+            "spotify": "https://open.spotify.com/track/0rC644PJcwGShjj73vJe0F"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 3,
+          "recording": "midnight-ignition",
+          "links": {
+            "spotify": "https://open.spotify.com/track/5VaD1DKncBNIQ9hf7YdQ5q"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 4,
+          "recording": "after-midnight-ignition",
+          "links": {
+            "spotify": "https://open.spotify.com/track/4jiukl9FqhTUvJlS94mnBC"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 5,
+          "recording": "final-ignition",
+          "links": {
+            "spotify": "https://open.spotify.com/track/1m9JwakYXqACKOkV0O08uh"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 6,
+          "recording": "wings-of-dawn",
+          "links": {
+            "spotify": "https://open.spotify.com/track/1mJBA5qPdLalL3yT0TRL1B"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 7,
+          "recording": "eternal-horizon-night-drive-outro",
+          "links": {
+            "spotify": "https://open.spotify.com/track/6R9a0o0DsDFBuhPw4wPqnd"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "beyond-the-dawn-the-first-light",
+      "title": "Beyond the Dawn – The First Light",
+      "type": "ep",
+      "releaseDate": "2025-10-13",
+      "displayArtist": "zunaari",
+      "cover": {
+        "base": "images/releases/beyond-the-dawn",
+        "widths": [
+          320,
+          480
+        ]
+      },
+      "links": {
+        "spotify": "https://open.spotify.com/album/3RsPtaTQwQaK3l6KlEgFOg"
+      },
+      "tracks": [
+        {
+          "disc": 1,
+          "no": 1,
+          "recording": "keep-rising",
+          "links": {
+            "spotify": "https://open.spotify.com/track/6XRL6h4Hne4a7cH7eqCdVb"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 2,
+          "recording": "into-the-dawn",
+          "links": {
+            "spotify": "https://open.spotify.com/track/6z6jDOR2s56mWU6M2PCAkH"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 3,
+          "recording": "chase-the-dawn",
+          "links": {
+            "spotify": "https://open.spotify.com/track/4cbplbeC6GwfJk6EAEAqji"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 4,
+          "recording": "above-the-dawn",
+          "links": {
+            "spotify": "https://open.spotify.com/track/2sddBjif2SbfDkSWW5qCRl"
+          }
+        },
+        {
+          "disc": 1,
+          "no": 5,
+          "recording": "tears-of-light",
+          "links": {
+            "spotify": "https://open.spotify.com/track/6m4u7F4Ze9IcQEGUR7uKZP"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "into-the-dawn",
+      "title": "Into the Dawn",
+      "type": "single",
+      "releaseDate": "2025-09-27",
+      "displayArtist": "zunaari",
+      "cover": {
+        "base": "images/releases/into-the-dawn",
+        "widths": [
+          320,
+          480
+        ]
+      },
+      "links": {
+        "spotify": "https://open.spotify.com/album/59FXAInPBH43S3c8phBjT7"
+      },
+      "tracks": [
+        {
+          "disc": 1,
+          "no": 1,
+          "recording": "into-the-dawn",
+          "links": {
+            "spotify": "https://open.spotify.com/track/7ztjyDciB0vj2WBLioa5dX"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "hold-on-tight",
+      "title": "Hold on Tight",
+      "type": "single",
+      "releaseDate": "2025-09-20",
+      "displayArtist": "zunaari",
+      "cover": {
+        "base": "images/releases/hold-on-tight",
+        "widths": [
+          320,
+          480
+        ]
+      },
+      "links": {
+        "spotify": "https://open.spotify.com/album/4VYIs2FSxLQuCBpa5TtrFl"
+      },
+      "tracks": [
+        {
+          "disc": 1,
+          "no": 1,
+          "recording": "hold-on-tight",
+          "links": {
+            "spotify": "https://open.spotify.com/track/1jpVstz9s5lXwS6U30kH58"
+          }
+        }
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "id": "oEqs0bYfeS0",
+      "slug": "sora-neon-run",
+      "recording": "neon-run",
+      "kind": "official-music-video",
+      "published": "2026-11-15",
+      "title": "SORA – Neon Run",
+      "subtitle": "Trance Pop ・ Official Music Video",
+      "image": {
+        "base": "images/works/neon-run",
+        "widths": [
+          640,
+          960,
+          1280
+        ],
+        "src": 960,
+        "width": 960,
+        "height": 540,
+        "alt": "SORA – Neon Run サムネイル"
+      },
+      "description": {
+        "ja": "東京のネオンから、開かれた空へ。前へ進み続ける勇気と自由を描いた、SORAのTrance Pop。",
+        "en": "From Tokyo neon to open sky — an energetic and emotional trance pop song about moving forward and finding freedom beyond the lights of the city."
+      }
+    },
+    {
+      "id": "z3zYYyv_lXY",
+      "slug": "airi-home",
+      "recording": "home",
+      "kind": "official-music-video",
+      "published": "2026-11-08",
+      "title": "AIRI – Home"
+    },
+    {
+      "id": "zr_oEHVYhuw",
+      "slug": "into-the-dawn",
+      "recording": "into-the-dawn",
+      "kind": "audio",
+      "published": "2025-09-10",
+      "title": "Into the Dawn"
+    }
+  ],
+  "home": {
+    "latestVideo": "oEqs0bYfeS0",
+    "releases": [
+      "between-signal-and-light",
+      "first-light",
+      "ignition-night-drive-chapter",
+      "beyond-the-dawn-the-first-light",
+      "into-the-dawn",
+      "hold-on-tight"
+    ]
+  }
+}

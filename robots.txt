@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zunaari-official.github.io/sitemap.xml
