@@ -301,17 +301,19 @@ function homeLatest(v) {
   ];
 }
 
-function releaseCard(rel, { coverHref, coverLabel, pathPrefix, titleHref, heading = 'h3', eager = false }) {
+// load：'lazy'（既定・Home）／'eager'（画面の最初に見える）／'priority'（最初に見える中で最優先。LCP の対象）
+// reveal：Home のスクロール表示の演出。子ページでは付けない（JS を待たずに描画するため）
+function releaseCard(rel, { coverHref, coverLabel, pathPrefix, titleHref, heading = 'h3', load = 'lazy', reveal = true }) {
   const c = rel.cover;
   const type = TYPE_LABEL[rel.type];
   const external = /^https?:/.test(coverHref);
   return [
-    `      <li class="release-card reveal">`,
+    `      <li class="release-card${reveal ? ' reveal' : ''}">`,
     `        <a class="release-cover" href="${esc(coverHref)}"${external ? ' ' + ext : ''}>`,
     `          <img src="${pathPrefix}${c.base}-320.webp"`,
     `               srcset="${pathPrefix}${c.base}-320.webp 320w, ${pathPrefix}${c.base}-480.webp 480w"`,
     `               sizes="(max-width: 767px) calc(50vw - 34px), 300px"`,
-    `               width="480" height="480" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" alt="${esc(rel.title)}（${type}）${coverLabel}">`,
+    `               width="480" height="480" ${load === 'priority' ? 'fetchpriority="high"' : load === 'eager' ? 'loading="eager"' : 'loading="lazy"'} decoding="async" alt="${esc(rel.title)}（${type}）${coverLabel}">`,
     `        </a>`,
     `        <p class="release-meta"><time datetime="${rel.releaseDate}">${dots(rel.releaseDate)}</time> ・ ${type}</p>`,
     titleHref ? `        <${heading}><a href="${titleHref}">${esc(rel.title)}</a></${heading}>` : `        <${heading}>${esc(rel.title)}</${heading}>`,
@@ -700,7 +702,7 @@ function releasesIndex() {
     '    <p>音楽配信サービスで配信中のシングル・EP・アルバム。</p>',
     '    <p class="en">Singles, EPs and albums on streaming services.</p>',
     '    <ol class="release-list">',
-    ...list.flatMap((rel, i) => releaseCard(rel, { coverHref: releaseUrl(rel.slug), coverLabel: 'の詳細', pathPrefix: '/', titleHref: releaseUrl(rel.slug), heading: 'h2', eager: i < 3 })),
+    ...list.flatMap((rel, i) => releaseCard(rel, { coverHref: releaseUrl(rel.slug), coverLabel: 'の詳細', pathPrefix: '/', titleHref: releaseUrl(rel.slug), heading: 'h2', load: i === 0 ? 'priority' : i < 3 ? 'eager' : 'lazy', reveal: false })),
     '    </ol>',
     '    <p class="page-links"><a href="/music/">楽曲の一覧へ / Music Library →</a></p>',
     '  </section>',
