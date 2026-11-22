@@ -1,5 +1,6 @@
 {
   "preview": false,
+  "ogImage": "common",
   "pages": {
     "music": "all",
     "releases": "all"
